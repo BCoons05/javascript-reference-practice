@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title></title>
+</head>
+
+<style>
+  /* img {
+    width: 400px;
+  }
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .show-img-overlay {
+    position: relative;
+    bottom: 60px;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .hide-img-overlay {
+    position: relative;
+    bottom: 60px;
+    font-size: 21px;
+    color: transparent;
+  } */
+
+  /* img {
+      width: 400px;
+    }
+    .site-img {
+      border-right: 40px solid transparent;
+      border: 0px 40px 0px 0px solid transparent;
+    } */
+
+    /* .hidden {
+    display: none;
+  } */
+
+</style>
+<body>
+
+  <!-- <div class="container">
+    <img src="https://s3.amazonaws.com/bottega-devcamp/browser-js/laptop.jpg" class="site-img" alt="Laptop">
+    <div class="hide-img-overlay">Image Description</div>
+  </div>
+
+  <div class="container">
+    <img src="https://s3.amazonaws.com/bottega-devcamp/browser-js/another-laptop.jpg" class="site-img" alt="Laptop">
+    <div class="hide-img-overlay">Some Other Image Description</div>
+  </div> -->
+
+  <!-- <div id="dateComponent">
+
+  </div>
+  <button onclick="renderDate()">Click for Date</button>
+  <button id="dateButton">Click for Date</button> -->
+
+  <!-- <button id="toggleBtn">Toggle Me</button>
+
+  <div id="mainHeading" class="hidden">
+    Hi there
+  </div> -->
+
+    <!-- <div class='container'>
+        <img src="https://s3.amazonaws.com/bottega-devcamp/browser-js/laptop.jpg" class="site-img" alt="Laptop">
+    </div> -->
+
+    <!-- <input type="text" class="msgInput">
+
+    <div>
+        Characters left <span class="msgCounter">144</span>
+    </div>
+    <hr>
+    <input type="text" class="tagInput">
+
+    <div>
+        Characters left <span class="tagCounter">20</span>
+    </div> -->
+
+  <!-- <input type="text" id="searchBar"> -->
+
+
+    <!-- <div class="widget">
+        <input type="text" id="chat-input">
+        <button id="msgBtn" onclick="sendMessage()">Submit</button>
+        <button onclick="clearMessages()">Clear Messages</button>
+        <div class="chat-wrapper"></div>
+    </div> -->
+
+    <div class="todos">
+        <h2>Pending Todos</h2>
+            <ul>
+                <li class="todoItem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, animi.</li>
+                <li class="todoItem">Numquam dolor quo alias nam vel voluptates magni magnam quisquam.</li>
+                <li class="todoItem">Recusandae eaque quisquam facere ab reprehenderit cupiditate magni placeat quis?</li>
+                <li class="todoItem">Expedita asperiores nam saepe voluptatem, nostrum aliquid debitis quam recusandae.</li>
+                <li class="todoItem">Quaerat velit deserunt reprehenderit, vel placeat impedit accusamus non, deleniti!</li>
+            </ul>
+        </div>
+    
+        <h2>Completed Todos</h2>
+        <ul class="completedTodoWrapper">
+            <div class="completed"></div>
+        </ul>
+
+</body>
+
+<script>
+    // ***** adds an overlay to image on mouseover *****
+    
+//   const img = document.getElementsByClassName('site-img')[0];
+//   img.addEventListener('click', (e) => {
+//     debugger;
+//   });
+
+    // const imgs = document.querySelectorAll('.site-img')
+    
+    // imgs.forEach(img => {
+    //     img.addEventListener('mouseover', (event) => {
+    //         const captionElement = event.target.parentElement.children[1]
+    //         captionElement.className = 'show-img-overlay'
+    //     })
+    // });
+
+    // imgs.forEach(img => {
+    //     img.addEventListener('mouseout', (event) => {
+    //         const captionElement = event.target.parentElement.children[1]
+    //         captionElement.className = 'hide-img-overlay'
+    //     })
+    // });
+        // ***** Change innerHTML with event listener ***** 
+    // const dateElement = document.getElementById('dateComponent')
+    // const dateButton = document.getElementById('dateButton')
+        
+    // renderDate = () => {
+    //     dateElement.innerHTML = Date()
+    // }
+
+    // dateButton.addEventListener("click", (event) => {
+    //     dateElement.innerHTML = Date()
+    // })
+    
+    // ***** changes styles with event listener
+    // const laptop = document.querySelector('.site-img')
+
+    // laptop.addEventListener('mouseover', (event) => {
+    //     event.target.style.transition = '2s'
+    //     event.target.style.borderRight = '40px solid red'
+    // })
+    // laptop.addEventListener('mouseout', (event) => {
+    //     event.target.style.borderRight = '40px solid transparent'
+    // })
+
+    // ***** Hides text on button click *****
+
+    // const heading = document.getElementById('mainHeading')
+    // const btn = document.getElementById('toggleBtn')
+    // btn.addEventListener('click', (event) => {
+    //     heading.classList.toggle('hidden')
+    // })
+
+
+    // ***** Character countdown *****
+
+    // const msgInput = document.querySelector('.msgInput')
+    // const tagInput = document.querySelector('.tagInput')
+    // const msgCounter = document.querySelector('.msgCounter')
+    // const tagCounter = document.querySelector('.tagCounter')
+    
+
+    // const ensureContentLength = (content, max) => {
+    //     if(content.length > max){
+    //         return false
+    //     }else{return true}
+    // }
+
+    // const textFieldLengthValidator = (textField, counter, maxCount) =>{
+    //     textField.onkeyup = function(){
+    //         counter.innerHTML = maxCount - this.value.length
+
+    //         if(!ensureContentLength(this.value, (maxCount - 1))){
+    //             textField.disabled = true
+    //         }
+    //     }
+    // }
+
+    // textFieldLengthValidator(msgInput, msgCounter, 144)
+    // textFieldLengthValidator(tagInput, tagCounter, 20)
+
+
+// ***** Add Hot Key *****
+    
+    // const hotKeys = (e) => {
+    //     let windowEvent = window.event ? event : e
+    //     if(windowEvent.keyCode == 66&&windowEvent.ctrlKey){
+    //         const searchBar = document.querySelector('#searchBar')
+    //         searchBar.focus()
+    //     }
+    // }
+
+    // document.onkeydown = hotKeys
+
+    // ***** Dynamic HTML elements *****
+    // Creates a new div to show chat message //
+
+    // function sendMessage() {
+    //     const newDiv = document.createElement("div")
+    //     newDiv.classList.add('chatMsg')
+    //     let chatinput = document.querySelector('#chat-input').value
+    //     const newContent = document.createTextNode(chatinput)
+    //     newDiv.appendChild(newContent)
+
+    //     const widget = document.querySelector('.widget')
+    //     let chatWrapper = document.querySelector('#msgBtn')
+    //     document.querySelector('#chat-input').value = ''
+
+    //     if(document.querySelectorAll('chatMsg').length > 0){
+    //         chatWrapper = document.querySelectorAll('.chatMsg')[0]
+    //     }
+
+    //     widget.insertBefore(newDiv, chatWrapper)
+    //     widget.insert
+    // }
+
+    // function clearMessages(){
+    //     const messages = document.querySelectorAll('.chatMsg')
+    //     messages.forEach(message => message.remove())
+    // }
+
+    // ***** Challenge *****
+
+    const todos = document.querySelectorAll('.todoItem')
+
+    todos.forEach(todo => {
+        todo.addEventListener('click', (event) => {
+            const completedTodoWrapper = document.querySelector('.completedTodoWrapper')
+            const completed = document.querySelector('.completed')
+            const content = event.target.innerHTML
+            const completedTodo = event.target.remove()
+
+            const newList = document.createElement("li")
+            newList.classList.add('completedTodo')
+            const newContent = document.createTextNode(content)
+            newList.appendChild(newContent)
+
+            completedTodoWrapper.insertBefore(newList, completed)
+        })
+    })
+
+    // // ***** His answer *****
+
+    // const todos = document.querySelectorAll('.todoItem');
+    // const completedTodos = document.querySelector('.completed');
+    // const completedTodoWrapper = document.querySelector('.completedTodoWrapper');
+
+    // todos.forEach(todo => todo.addEventListener('click', (event) => {
+    //     let completedTodo = document.createElement('li');
+    //     let todoContent = document.createTextNode(todo.textContent);
+    //     completedTodo.appendChild(todoContent);
+    //     completedTodoWrapper.insertBefore(completedTodo, completedTodos);
+    //     todo.remove();
+    // }))
+
+</script>
+</html>
