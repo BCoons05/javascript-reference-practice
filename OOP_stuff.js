@@ -178,19 +178,38 @@
 // If a value is present in b, all of its occurrences must be removed from the other:
 // array_diff([1,2,2,2,3],[2]) == [1,3]
 
-removeSame = (arr1,  arr2) => {
+// removeSame = (arr1,  arr2) => {
   
-  for(num in arr1){
-    for(idx in arr2){
-      console.log(num)
-      if(arr1[num] == arr2[idx]){
-        arr1.splice(num, 1)
-        removeSame(arr1, arr2)
-      }
-    }
+//   for(num in arr1){
+//     for(idx in arr2){
+//       console.log(num)
+//       if(arr1[num] == arr2[idx]){
+//         arr1.splice(num, 1)
+//         removeSame(arr1, arr2)
+//       }
+//     }
+//   }
+
+//   return arr1
+// }
+
+// console.log(removeSame([1,2,2], [2]))
+
+
+removeByIndeces = (arr, indeces) => {
+  idxArr = []
+  for(idx in indeces){
+    idxArr.push(arr[indeces[idx]])
   }
 
-  return arr1
+  return idxArr
 }
 
-console.log(removeSame([1,2,2], [2]))
+const removeByIndex = (arr, arr2) => {
+  return arr2.map(element => {
+    return arr[element]
+  })
+}
+
+console.log(removeByIndeces(['a', 'b', 'c', 'd', 'e', 'f', 'f', 'e', 'f'], [1, 5]))
+console.log(removeByIndex(['a', 'b', 'c', 'd', 'e', 'f', 'f', 'e', 'f'], [1, 5]))
