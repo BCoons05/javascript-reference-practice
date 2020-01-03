@@ -196,20 +196,44 @@
 // console.log(removeSame([1,2,2], [2]))
 
 
-removeByIndeces = (arr, indeces) => {
-  idxArr = []
-  for(idx in indeces){
-    idxArr.push(arr[indeces[idx]])
-  }
+// removeByIndeces = (arr, indeces) => {
+//   idxArr = []
+//   for(idx in indeces){
+//     idxArr.push(arr[indeces[idx]])
+//   }
 
-  return idxArr
-}
+//   return idxArr
+// }
 
-const removeByIndex = (arr, arr2) => {
-  return arr2.map(element => {
-    return arr[element]
+// const removeByIndex = (arr, arr2) => {
+//   return arr2.map(element => {
+//     return arr[element]
+//   })
+// }
+
+// console.log(removeByIndeces(['a', 'b', 'c', 'd', 'e', 'f', 'f', 'e', 'f'], [1, 5]))
+// console.log(removeByIndex(['a', 'b', 'c', 'd', 'e', 'f', 'f', 'e', 'f'], [1, 5]))
+
+
+const arrayPairs = (arr, arr2) => {
+  return arr.map(element => {
+    const newArr = []
+    return arr2.map(el => {
+      return [element, el]
+    })
   })
 }
 
-console.log(removeByIndeces(['a', 'b', 'c', 'd', 'e', 'f', 'f', 'e', 'f'], [1, 5]))
-console.log(removeByIndex(['a', 'b', 'c', 'd', 'e', 'f', 'f', 'e', 'f'], [1, 5]))
+newArrayPairs = (arr1, arr2) => {
+  const newArr= []
+  arr1.forEach(element => {
+    arr2.forEach(element2 => {
+      newArr.push([element, element2])
+    });
+  });
+
+  return newArr
+}
+
+console.log(arrayPairs([1, 2], ['a', 'b']))
+console.log(newArrayPairs([1, 2], ['a', 'b']))
