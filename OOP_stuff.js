@@ -1,3 +1,5 @@
+
+
 // // constructor ans self = __init__ and self in python
 // class Instructor {
 //     constructor({ name, role = 'assistant' }) {
@@ -215,25 +217,95 @@
 // console.log(removeByIndex(['a', 'b', 'c', 'd', 'e', 'f', 'f', 'e', 'f'], [1, 5]))
 
 
-const arrayPairs = (arr, arr2) => {
-  return arr.map(element => {
-    const newArr = []
-    return arr2.map(el => {
-      return [element, el]
+// const arrayPairs = (arr, arr2) => {
+//   return arr.map(element => {
+//     const newArr = []
+//     return arr2.map(el => {
+//       return [element, el]
+//     })
+//   })
+// }
+
+// newArrayPairs = (arr1, arr2) => {
+//   const newArr= []
+//   arr1.forEach(element => {
+//     arr2.forEach(element2 => {
+//       newArr.push([element, element2])
+//     });
+//   });
+
+//   return newArr
+// }
+
+// console.log(arrayPairs([1, 2], ['a', 'b']))
+// console.log(newArrayPairs([1, 2], ['a', 'b']))
+
+
+// removeByValue = (arr, arr2) => {
+//   return arr.filter(i => {
+//     return arr2
+//   })
+// }
+
+// const removeByValue = (arr1, arr2) => {
+//   newArr = []
+//   arr2.forEach(element => {
+//     arr1.forEach(idx => {
+//       if(arr1[idx] === arr2[element]){
+//         newArr.splice(element, 1)
+//         removeByValue(arr1, arr2)
+//       }
+//     })
+//   });
+
+//   return arr1
+// }
+
+// removeByValue = (arr1, arr2) => {
+//   newArr = []
+//   for(element in arr2){
+//     for(idx in arr1){
+//       if(idx === element){
+//         newArr.push(idx)
+//         removeByValue(arr1, arr2)
+//       }
+//     }
+//   }
+
+//   return arr1
+// }
+
+// function removeByValue(arr, ...valuesToRemove){
+//   const pulled = arr.filter(value => {
+//     return !valuesToRemove.includes(values)
+//   })
+
+//   arr.length = 0
+//   pulled.forEach(value => arr.push(value))
+
+//   return pulled
+// }
+
+
+// console.log(removeByValue(['a', 'b', 'c', 'a', 'b', 'c'], ['a', 'c']))
+
+
+sumTwoSmallest = arr => {
+    let lowest = arr[0]
+    let second = 0
+    arr.forEach(element => {
+        if(arr[element] < lowest){
+            second = lowest
+            lowest = arr[element]
+        }
     })
-  })
+
+    return lowest + second
 }
 
-newArrayPairs = (arr1, arr2) => {
-  const newArr= []
-  arr1.forEach(element => {
-    arr2.forEach(element2 => {
-      newArr.push([element, element2])
-    });
-  });
+// sumTwoSmallest = arr => {
+//     arr.sort((a,b) => a-b)
+//     return arr[0] + arr[1]
+// }
 
-  return newArr
-}
-
-console.log(arrayPairs([1, 2], ['a', 'b']))
-console.log(newArrayPairs([1, 2], ['a', 'b']))
+console.log(sumTwoSmallest([10,6,3,5,2,4]))
