@@ -1,5 +1,4 @@
 
-
 // // constructor ans self = __init__ and self in python
 // class Instructor {
 //     constructor({ name, role = 'assistant' }) {
@@ -290,22 +289,65 @@
 // console.log(removeByValue(['a', 'b', 'c', 'a', 'b', 'c'], ['a', 'c']))
 
 
-sumTwoSmallest = arr => {
-    let lowest = arr[0]
-    let second = 0
-    arr.forEach(element => {
-        if(arr[element] < lowest){
-            second = lowest
-            lowest = arr[element]
-        }
-    })
-
-    return lowest + second
-}
-
 // sumTwoSmallest = arr => {
-//     arr.sort((a,b) => a-b)
-//     return arr[0] + arr[1]
+//     let lowest = arr[0]
+//     let second = 0
+//     arr.forEach(element => {
+//         if(arr[element] < lowest){
+//             second = lowest
+//             lowest = arr[element]
+//         }
+//     })
+
+//     return lowest + second
 // }
 
-console.log(sumTwoSmallest([10,6,3,5,2,4]))
+// // sumTwoSmallest = arr => {
+// //     arr.sort((a,b) => a-b)
+// //     return arr[0] + arr[1]
+// // }
+
+// console.log(sumTwoSmallest([10,6,3,5,2,4]))
+
+
+// function narcissistic(value) {
+//   total = 0
+  
+//   valueString = value.toString()
+  
+//   valueArray = valueString.split('')
+//   digits = valueArray.length
+
+//   valueArray.forEach(number => {
+//     total += Math.pow(number, digits)
+//     // console.log(number, digits)
+//   })
+  
+//   if(total === value){
+//     return true
+//   } else {
+//     return false
+//   }
+// }
+
+// console.log(narcissistic(371))
+
+deleteNth = (arr, n) => {
+    
+    for(let i = 0; i < arr.length; i++){
+        count = 0
+        for(let j = 0; j < arr.length; j++){
+            if(arr[i] === arr[j]){
+                if(count >= n){
+                    arr.splice(j, 1)
+                }
+                count++
+                // console.log("count = " + count + " arr[i] = " + arr[i] + " arr[j] = " + arr[j])
+            }
+        }
+    }
+
+    return arr
+}
+
+console.log(deleteNth([32, 32, 25, 44, 32, 26, 32, 25, 44, 25, 26, 26, 32, 26, 25, 25, 25, 25, 26, 32, 26, 26, 44, 44, 16, 50, 16, 50, 48, 6, 16, 16, 50, 25, 50, 48, 44], 1))
