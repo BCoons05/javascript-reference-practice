@@ -332,22 +332,110 @@
 
 // console.log(narcissistic(371))
 
-deleteNth = (arr, n) => {
+// deleteNth = (arr, n) => {
     
-    for(let i = 0; i < arr.length; i++){
-        count = 0
-        for(let j = 0; j < arr.length; j++){
-            if(arr[i] === arr[j]){
-                if(count >= n){
-                    arr.splice(j, 1)
-                }
-                count++
-                // console.log("count = " + count + " arr[i] = " + arr[i] + " arr[j] = " + arr[j])
-            }
-        }
-    }
+//     for(let i = 0; i < arr.length; i++){
+//         count = 0
+//         for(let j = 0; j < arr.length; j++){
+//             if(arr[i] === arr[j]){
+//                 if(count >= n){
+//                     arr.splice(j, 1)
+//                 }
+//                 count++
+//                 // console.log("count = " + count + " arr[i] = " + arr[i] + " arr[j] = " + arr[j])
+//             }
+//         }
+//     }
 
-    return arr
+//     return arr
+// }
+
+// console.log(deleteNth([32, 32, 25, 44, 32, 26, 32, 25, 44, 25, 26, 26, 32, 26, 25, 25, 25, 25, 26, 32, 26, 26, 44, 44, 16, 50, 16, 50, 48, 6, 16, 16, 50, 25, 50, 48, 44], 1))
+
+
+// function findUniq(arr) {
+//     let first = arr.splice(0, 1)
+//     let unique = 0
+//     if(arr.includes(first[0])){
+//       console.log('includes? ', arr.includes(first[0]))
+//       arr.forEach(num => {
+//         if(num != first[0]){
+//           unique = num
+//         }
+//       }) 
+//       return unique
+//     } else {return first[0]}
+//   }
+
+
+// function anagrams(word, words) {
+//     let anagrams = []
+//     let wordArr = word.split("")
+//     let sortedWord = wordArr.sort()
+
+//     words.forEach(arrWord => {
+//         let newWordArr = arrWord.split('')
+//         let sortedNewWord = newWordArr.sort()
+
+//         if(sortedWord == sortedNewWord){
+//             anagrams.push(arrWord)
+//         }
+//     })
+    
+//     return anagrams
+//   }
+
+//   console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))
+
+// function generateJSON(lines) {
+//     let jsonArray = []
+
+//     lines.forEach(arr => {
+//         var json_arr = {};
+//         json_arr["name1"] = "value1";
+//         json_arr["name2"] = "value2";
+//         json_arr["name3"] = "value3";
+
+//         var json_string = JSON.stringify(json_arr);
+//         jsonArray.push(json_string)
+//     })
+
+//     return jsonArray
+// }
+
+function generateJSON(lines) {
+  let jsonArray = []
+  let id = 0
+  // let name = ""
+  let managerId
+
+  lines.forEach(array => {
+      id = array[0]
+      let name = array[1]
+      managerId = array[2]
+
+      if(managerId){managerId = parseInt(array[2])}
+      else{managerId = null}
+
+      jsonArray.push({
+        "id": parseInt(id),
+        "name": name,
+        "manager_id": managerId
+    })
+  })
+
+  return jsonArray
 }
 
-console.log(deleteNth([32, 32, 25, 44, 32, 26, 32, 25, 44, 25, 26, 26, 32, 26, 25, 25, 25, 25, 26, 32, 26, 26, 44, 44, 16, 50, 16, 50, 48, 6, 16, 16, 50, 25, 50, 48, 44], 1))
+console.log(generateJSON([
+    [
+      "1",
+      "Gregory Gwilliam",
+      "2"
+    ],
+    [
+      "2",
+      "Brice Martin",
+      ""
+    ]
+  ]))
